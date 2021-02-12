@@ -1,11 +1,24 @@
-# My Personal Project
+# Workout Tracker!
 
-## A subtitle
+## (Track both strength workouts and runs.)
 
-A *bulleted* list:
-- item 1
-- item 2
-- item 3
+- This is an application for people who exercise. **(Meaning me. It's for me.)**
+- It will allow users to track both runs (date, distance, route, notes) and 
+strength workouts (name, date, rounds, notes, and a list of exercises.\
+** rounds: rounds through a circuit. I like circuits, therefore everyone
+likes circuits.\
+** exerise: an exercise consists of a name and any equipment needed
+- This project is of interest to me because I exercise just about every day. I tend to 
+ just scribble my workouts down on scraps of paper, which later vanish into the abyss. It would be nice to 
+have an application to help track my workouts to help me remember what I did in the past, what worked, and what didn't.
+The run log aspect is more just for record keeping, and, in a later phase of this project, 
+to be able to see stats for the week/month/year. I'm a pretty casual runner (ie. don't care about
+time, pace, splits, etc.), but tracking things gives me a little dopamine kick, so that's a nice aspect as well.
 
-An example of text with **bold** and *italic* fonts.  Note that the IntelliJ markdown previewer doesn't seem to render 
-the bold and italic fonts correctly but they will appear correctly on GitHub.
+## User Stories
+- As a user, I would like to be able to input a strength workout (name, date, rounds, list of exercises).
+- As a user, I would like to be able to assign each exercise in my workout a name and equipment used.
+- As a user, I would like to be able to add notes to my workout after it has been logged.
+- As a user, I would like a print out summary of the workout I just logged.
+- As a user, I would like to be able to log a run (date, distance, route, and notes).
+- As a user, I would like a print out summary of the run I just logged.
