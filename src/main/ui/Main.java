@@ -1,5 +1,6 @@
 package ui;
 
+import model.Circuit;
 import model.Run;
 import model.Workout;
 
@@ -11,30 +12,29 @@ public class Main {
     }
 
     public static void handleChoice() {
-        System.out.println("Would you like to log a run or a strength circuit?");
+        System.out.println("Would you like to log a run or a circuit?");
         Scanner choiceScan = new Scanner(System.in);
         String choice = choiceScan.nextLine();
         if (choice.equals("run")) {
             logRun();
-        } else if (choice.equals("strength circuit")) {
+        } else if (choice.equals("circuit")) {
             logCircuit();
         }
     }
 
     public static void logRun() {
-        Run run;
         System.out.println("Oh no. At least it's over now! What's the date?");
         Scanner dateScan = new Scanner(System.in);
         String date = dateScan.nextLine();
-        System.out.println("And the distance?");
+        System.out.println("And the distance (km)?");
         Scanner distScan = new Scanner(System.in);
         Integer distance = distScan.nextInt();
         System.out.println("Where did you run?");
         Scanner routeScan = new Scanner(System.in);
         String route = routeScan.nextLine();
-        run = new Run(date, distance, route);
+        Workout run = new Run(date, distance, route);
         addRunNotes(run);
-        System.out.println("Awesome!\r\n" + run.printRun());
+        System.out.println("Awesome!\r\n" + run.printWorkout());
         addAnother();
     }
 
@@ -48,10 +48,10 @@ public class Main {
         System.out.println("How many rounds?");
         Scanner roundsScan = new Scanner(System.in);
         Integer rounds = roundsScan.nextInt();
-        Workout workout = new Workout(name, date, rounds);
-        addExercises(workout);
-        addCircuitNotes(workout);
-        System.out.println("Great!\r\n" + workout.printWorkout());
+        Workout circuit = new Circuit(name, date, rounds);
+        addExercises(circuit);
+        addCircuitNotes(circuit);
+        System.out.println("YAY FOR YOUUUUU!\r\n" + circuit.printWorkout());
         addAnother();
     }
 
@@ -70,7 +70,7 @@ public class Main {
         }
     }
 
-    public static void addRunNotes(Run r) {
+    public static void addRunNotes(Workout r) {
         System.out.println("Want to add any notes?");
         Scanner addNoteScan = new Scanner(System.in);
         String addNote = addNoteScan.nextLine();

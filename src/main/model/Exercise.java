@@ -1,10 +1,7 @@
 package model;
 
-import java.util.List;
-
 public class Exercise {
     private String name;
-    private Integer value;
     private String equipment;
 
     public Exercise(String name, String equipment) {
@@ -12,7 +9,7 @@ public class Exercise {
         this.equipment = equipment;
     }
 
-    // getters
+    // GETTERS
     public String getName() {
         return this.name;
     }
@@ -21,8 +18,8 @@ public class Exercise {
         return this.equipment;
     }
 
-    // methods
+    // EFFECTS: print formatted exercise and equipment used
     public String printExercise() {
-        return this.name + ": " + this.equipment + "\r\n";
+        return this.getName() + ": " + this.getEquipment() + "\r\n";
     }
 }
