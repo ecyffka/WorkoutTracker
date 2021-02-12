@@ -33,7 +33,7 @@ public class Main {
         Scanner routeScan = new Scanner(System.in);
         String route = routeScan.nextLine();
         Workout run = new Run(date, distance, route);
-        addRunNotes(run);
+        addNotes(run);
         System.out.println("Awesome!\r\n" + run.printWorkout());
         addAnother();
     }
@@ -50,7 +50,7 @@ public class Main {
         Integer rounds = roundsScan.nextInt();
         Workout circuit = new Circuit(name, date, rounds);
         addExercises(circuit);
-        addCircuitNotes(circuit);
+        addNotes(circuit);
         System.out.println("YAY FOR YOUUUUU!\r\n" + circuit.printWorkout());
         addAnother();
     }
@@ -70,19 +70,7 @@ public class Main {
         }
     }
 
-    public static void addRunNotes(Workout r) {
-        System.out.println("Want to add any notes?");
-        Scanner addNoteScan = new Scanner(System.in);
-        String addNote = addNoteScan.nextLine();
-        if (addNote.equals("yes")) {
-            System.out.println("Thoughts? Feeeeeleeeeens??");
-            Scanner noteScan = new Scanner(System.in);
-            String note = noteScan.nextLine();
-            r.addNotes(note);
-        }
-    }
-
-    public static void addCircuitNotes(Workout w) {
+    public static void addNotes(Workout w) {
         System.out.println("Want to add any notes?");
         Scanner addNoteScan = new Scanner(System.in);
         String addNote = addNoteScan.nextLine();

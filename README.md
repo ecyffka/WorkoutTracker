@@ -16,9 +16,8 @@ to be able to see stats for the week/month/year. I'm a pretty casual runner (ie.
 time, pace, splits, etc.), but tracking things gives me a little dopamine kick, so that's a nice aspect as well.
 
 ## User Stories
-- As a user, I would like to be able to input a strength workout (name, date, rounds, list of exercises).
-- As a user, I would like to be able to assign each exercise in my workout a name and equipment used.
-- As a user, I would like to be able to add notes to my workout after it has been logged.
-- As a user, I would like a print out summary of the workout I just logged.
+- As a user, I would like to be able to input a circuit (name, date, rounds, list of exercises).
+- As a user, I would like to be able to assign each exercise in my circuit a name and any equipment used.
 - As a user, I would like to be able to log a run (date, distance, route, and notes).
-- As a user, I would like a print out summary of the run I just logged.
+- As a user, I would like to be able to add notes to my workout (run or circuit) after it has been logged.
+- As a user, I would like a print out summary of the workout (run or circuit) I just logged.

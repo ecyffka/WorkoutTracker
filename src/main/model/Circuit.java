@@ -23,6 +23,7 @@ public class Circuit extends Workout {
         return this.rounds;
     }
 
+    // REQUIRES: circuit's list of exercises is not blank
     // EFFECTS: prints formatted list of exercises
     public String printExercises() {
         String nameList = "";

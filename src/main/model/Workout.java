@@ -16,10 +16,14 @@ public abstract class Workout {
         return this.notes;
     }
 
+    public List<Exercise> getListOfExercises() {
+        return this.listOfExercises;
+    }
+
     // MODIFIES: this
     // EFFECTS: adds note to workout
     public void addNotes(String n) {
-        this.notes += n;
+        this.notes += (n + "\r\n");
     }
 
     // REQUIRES: object actual type must be Circuit
