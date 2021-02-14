@@ -1,8 +1,9 @@
 package model;
 
+// Represents an exercise with a name and necessary equipment
 public class Exercise {
-    private String name;
-    private String equipment;
+    private String name;             // name of the exercise
+    private String equipment;        // necessary equipment
 
     public Exercise(String name, String equipment) {
         this.name = name;

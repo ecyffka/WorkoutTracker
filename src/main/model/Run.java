@@ -1,8 +1,9 @@
 package model;
 
+// Represents a run (a subclass of Workout) with a distance and route, along with all properties from Workout.
 public class Run extends Workout {
-    private Integer distance;
-    private String route;
+    private Integer distance;     // distance ran
+    private String route;         // running route
 
     public Run(String date, Integer distance, String route) {
         this.date = date;

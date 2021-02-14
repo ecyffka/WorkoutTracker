@@ -2,9 +2,11 @@ package model;
 
 import java.util.ArrayList;
 
+// Represents a strength circuit (a subclass of Workout) with a name and number of rounds (times the circuit was
+// completed), along with all properties from Workout.
 public class Circuit extends Workout {
-    private String name;
-    private Integer rounds;
+    private String name;         // name of workout
+    private Integer rounds;      // number of times the circuit was completed (rounds)
 
     public Circuit(String name, String date, Integer rounds) {
         this.name = name;

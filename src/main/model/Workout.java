@@ -2,10 +2,12 @@ package model;
 
 import java.util.List;
 
+// Represents the framework of a workout with the date completed, notes, and a list of exercises
+// This is an abstract class to be extended by subclasses representing more specific types of workouts
 public abstract class Workout {
-    protected String date;
-    protected String notes;
-    protected List<Exercise> listOfExercises;
+    protected String date;                        // date workout completed
+    protected String notes;                       // notes
+    protected List<Exercise> listOfExercises;     // list of exercises
 
     // GETTERS
     public String getDate() {
