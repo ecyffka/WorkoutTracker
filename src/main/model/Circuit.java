@@ -1,5 +1,8 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 // Represents a strength circuit (a subclass of Workout) with a name and number of rounds (times the circuit was
@@ -43,5 +46,24 @@ public class Circuit extends Workout {
             circuitString += "Notes: " + getNotes();
         }
         return circuitString;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("date", date);
+        json.put("rounds", rounds);
+        json.put("notes", notes);
+        json.put("listOfExercises", toJsonExercises());
+        return json;
+    }
+
+    public JSONArray toJsonExercises() {
+        JSONArray array = new JSONArray();
+        for (Exercise e : listOfExercises) {
+            array.put(e.toJson());
+        }
+        return array;
     }
 }

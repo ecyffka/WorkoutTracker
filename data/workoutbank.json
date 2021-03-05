@@ -1,0 +1,45 @@
+{
+    "workoutbank": [
+        {
+            "date": "03/03/21",
+            "route": "seawall",
+            "notes": "\r\n",
+            "distance": 2,
+            "name": ""
+        },
+        {
+            "date": "03/04/21",
+            "notes": "\r\n",
+            "name": "03/04/21",
+            "listOfExercises": [
+                {
+                    "name": "ex1",
+                    "equipment": "eq1"
+                },
+                {
+                    "name": "ex2",
+                    "equipment": "eq2"
+                }
+            ],
+            "rounds": 2
+        },
+        {
+            "date": "03/05/21",
+            "route": "seawall",
+            "notes": "\r\n",
+            "distance": 2,
+            "name": ""
+        },
+        {
+            "date": "03/04/21",
+            "notes": "notesss2\r\n",
+            "name": "testcircuit2",
+            "listOfExercises": [{
+                "name": "ex1",
+                "equipment": "eq1"
+            }],
+            "rounds": 3
+        }
+    ],
+    "name": "Test WorkoutBank"
+}

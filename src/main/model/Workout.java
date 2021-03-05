@@ -1,15 +1,23 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.List;
 
 // Represents the framework of a workout with the date completed, notes, and a list of exercises
 // This is an abstract class to be extended by subclasses representing more specific types of workouts
-public abstract class Workout {
+public abstract class Workout implements Writable {
+    protected String name;                        // name of workout
     protected String date;                        // date workout completed
     protected String notes;                       // notes
     protected List<Exercise> listOfExercises;     // list of exercises
 
     // GETTERS
+    public String getName() {
+        return this.name;
+    }
+
     public String getDate() {
         return this.date;
     }
@@ -20,6 +28,11 @@ public abstract class Workout {
 
     public List<Exercise> getListOfExercises() {
         return this.listOfExercises;
+    }
+
+    // SETTER
+    public void setListOfExercises(List<Exercise> l) {
+        this.listOfExercises = l;
     }
 
     // MODIFIES: this
@@ -36,5 +49,12 @@ public abstract class Workout {
         this.listOfExercises.add(e);
     }
 
+//    public void addExercise(Exercise e) {
+//        this.listOfExercises.add(e);
+//    }
+
     public abstract String printWorkout();
+
+    @Override
+    public abstract JSONObject toJson();
 }

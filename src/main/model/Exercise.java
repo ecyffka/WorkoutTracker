@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONObject;
+
 // Represents an exercise with a name and necessary equipment
 public class Exercise {
     private String name;             // name of the exercise
@@ -22,5 +24,12 @@ public class Exercise {
     // EFFECTS: print formatted exercise and equipment used
     public String printExercise() {
         return this.getName() + ": " + this.getEquipment() + "\r\n";
+    }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("equipment", equipment);
+        return json;
     }
 }
