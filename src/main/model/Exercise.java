@@ -3,6 +3,8 @@ package model;
 import org.json.JSONObject;
 
 // Represents an exercise with a name and necessary equipment
+// Citation: JSON code adapted from JsonSerializationDemo
+//   (Source: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo)
 public class Exercise {
     private String name;             // name of the exercise
     private String equipment;        // necessary equipment
@@ -26,6 +28,8 @@ public class Exercise {
         return this.getName() + ": " + this.getEquipment() + "\r\n";
     }
 
+    // MODIFIES: json
+    // EFFECTS converts exercise to json object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", name);

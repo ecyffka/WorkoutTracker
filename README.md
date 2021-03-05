@@ -21,5 +21,6 @@ time, pace, splits, etc.), but tracking things gives me a little dopamine kick, 
 - As a user, I would like to be able to log a run (date, distance, route, and notes).
 - As a user, I would like to be able to add notes to my workout (run or circuit) after it has been logged.
 - As a user, I would like a print out summary of the workout (run or circuit) I just logged.
-- As a user, I would like to be able to save my workout to file.
-- As a user, I would like to be able to retrieve my workouts from file.
+- As a user, I would like to be able to search for workouts by name or date.
+- As a user, I would like to be able to save my workout log to file.
+- As a user, I would like to be able to retrieve my saved workout log.

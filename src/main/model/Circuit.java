@@ -7,6 +7,8 @@ import java.util.ArrayList;
 
 // Represents a strength circuit (a subclass of Workout) with a name and number of rounds (times the circuit was
 // completed), along with all properties from Workout.
+// Citation: JSON code adapted from JsonSerializationDemo
+//   (Source: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo)
 public class Circuit extends Workout {
     private String name;         // name of workout
     private Integer rounds;      // number of times the circuit was completed (rounds)
@@ -49,6 +51,8 @@ public class Circuit extends Workout {
     }
 
     @Override
+    // MODIFIES: json
+    // EFFECTS: converts circuit to json object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", name);
@@ -59,6 +63,8 @@ public class Circuit extends Workout {
         return json;
     }
 
+    // MODIFIES: array
+    // EFFECTS: converts circuit's list of exercises to json array
     public JSONArray toJsonExercises() {
         JSONArray array = new JSONArray();
         for (Exercise e : listOfExercises) {

@@ -7,9 +7,12 @@ import persistence.Writable;
 import java.util.ArrayList;
 import java.util.List;
 
+// represents a workout log of all saved workouts
+// Citation: JSON code adapted from JsonSerializationDemo
+//   (Source: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo)
 public class WorkoutBank implements Writable {
-    private String name;
-    private List<Workout> workoutbank;
+    private String name;                  // name of log
+    private List<Workout> workoutbank;    // list of saved workouts
 
     public WorkoutBank(String name) {
         this.name = name;
@@ -21,10 +24,13 @@ public class WorkoutBank implements Writable {
         return this.name;
     }
 
+    // MODIFIES: this
+    // EFFECTS: adds a workout to the workout log
     public void addWorkout(Workout w) {
         workoutbank.add(w);
     }
 
+    // EFFECTS: search for a workout in the bank by name or date
     public String lookup(String nameOrDate) {
         String strResults = "";
         for (Workout w : this.workoutbank) {
@@ -39,6 +45,8 @@ public class WorkoutBank implements Writable {
     }
 
     @Override
+    // MODIFIES: json
+    // EFFECTS: converts workout bank to json object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("name", name); //?
@@ -46,6 +54,7 @@ public class WorkoutBank implements Writable {
         return json;
     }
 
+    // MODIFIES: jsonArray
     // EFFECTS: returns workouts in this workout bank as a JSON array
     private JSONArray workoutsToJson() {
         JSONArray jsonArray = new JSONArray();

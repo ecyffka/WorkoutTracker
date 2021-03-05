@@ -7,6 +7,8 @@ import java.util.List;
 
 // Represents the framework of a workout with the date completed, notes, and a list of exercises
 // This is an abstract class to be extended by subclasses representing more specific types of workouts
+// Citation: JSON code adapted from JsonSerializationDemo
+//   (Source: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo)
 public abstract class Workout implements Writable {
     protected String name;                        // name of workout
     protected String date;                        // date workout completed
@@ -48,10 +50,6 @@ public abstract class Workout implements Writable {
         Exercise e = new Exercise(name, equipment);
         this.listOfExercises.add(e);
     }
-
-//    public void addExercise(Exercise e) {
-//        this.listOfExercises.add(e);
-//    }
 
     public abstract String printWorkout();
 

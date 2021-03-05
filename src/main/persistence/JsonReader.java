@@ -12,6 +12,8 @@ import model.*;
 import org.json.*;
 
 // Represents a reader that reads workout bank from JSON data stored in file
+// Citation: JSON code adapted from JsonSerializationDemo
+//   (Source: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo)
 public class JsonReader {
     private String source;
 
@@ -68,6 +70,8 @@ public class JsonReader {
         }
     }
 
+    // MODIFIES: workout
+    // EFFECTS: parses circuit workout from JSON object
     private Workout addCircuit(JSONObject jsonObject) {
         Workout workout;
         String name = jsonObject.getString("name");
@@ -89,6 +93,8 @@ public class JsonReader {
         return workout;
     }
 
+    // MODIFIES: workout
+    // EFFECTS: parses run workout from JSON object
     private Workout addRun(JSONObject jsonObject) {
         String date = jsonObject.getString("date");
         String notes = jsonObject.getString("notes");

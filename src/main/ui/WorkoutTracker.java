@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.util.Scanner;
 
 // Workout Tracker application
+// Citation: JSON code adapted from JsonSerializationDemo
+//   (Source: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo)
 public class WorkoutTracker {
     WorkoutBank workoutbank;
     private static final String JSON_STORE = "./data/workoutbank.json";
@@ -46,7 +48,7 @@ public class WorkoutTracker {
                 lookupWorkout();
             case 5:
                 saveWorkoutBank();
-                break;
+                System.exit(-1);
         }
     }
 
@@ -120,6 +122,7 @@ public class WorkoutTracker {
         }
     }
 
+    // EFFECTS: search workout bank for a workout by name or date
     public void lookupWorkout() {
         System.out.println("Enter in the name OR date (mm/dd/yy) of the workout you're trying to find:");
         Scanner searchTermScan = new Scanner(System.in);
