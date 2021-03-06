@@ -21,17 +21,17 @@ class WorkoutTest {
 
     @Test
     public void testGetRoute() {
-        assertEquals(run.getRoute(), "route3");
+        assertEquals(runWorkout.getRoute(), "route");
     }
 
     @Test
     public void testGetDistance() {
-        assertEquals(run.getDistance(),3);
+        assertEquals(runWorkout.getDistance(),1);
     }
 
     @Test
     public void testGetRounds() {
-        assertEquals(circuit.getRounds(), 4);
+        assertEquals(circuitWorkout.getRounds(), 2);
     }
 
     @Test

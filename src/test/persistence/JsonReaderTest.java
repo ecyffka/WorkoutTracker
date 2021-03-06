@@ -25,7 +25,7 @@ public class JsonReaderTest extends JsonTest {
     }
 
     @Test
-    void testReaderEmptyWorkRoom() {
+    void testReaderEmptyWorkoutBank() {
         JsonReader reader = new JsonReader("./data/testReaderEmptyWorkoutBank.json");
         try {
             WorkoutBank wb = reader.read();
@@ -37,7 +37,7 @@ public class JsonReaderTest extends JsonTest {
     }
 
     @Test
-    void testReaderGeneralWorkRoom() {
+    void testReaderGeneralWorkoutBank() {
         JsonReader reader = new JsonReader("./data/testReaderGeneralWorkoutBank.json");
         try {
             WorkoutBank wb = reader.read();

@@ -25,7 +25,7 @@ public class JsonWriterTest extends JsonTest {
     }
 
     @Test
-    void testWriterEmptyWorkroom() {
+    void testWriterEmptyWorkoutBank() {
         try {
             WorkoutBank wb = new WorkoutBank("Test WorkoutBank");
             JsonWriter writer = new JsonWriter("./data/testWriterEmptyWorkoutBank.json");
@@ -43,7 +43,7 @@ public class JsonWriterTest extends JsonTest {
     }
 
     @Test
-    void testWriterGeneralWorkroom() {
+    void testWriterGeneralWorkoutBank() {
         try {
             WorkoutBank wb = new WorkoutBank("Test WorkoutBank");
             Workout workout = new Run("03/03/21", 5, "seawall");
