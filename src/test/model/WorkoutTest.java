@@ -20,6 +20,21 @@ class WorkoutTest {
     }
 
     @Test
+    public void testGetRoute() {
+        assertEquals(run.getRoute(), "route3");
+    }
+
+    @Test
+    public void testGetDistance() {
+        assertEquals(run.getDistance(),3);
+    }
+
+    @Test
+    public void testGetRounds() {
+        assertEquals(circuit.getRounds(), 4);
+    }
+
+    @Test
     public void testAddNotesWR() {
         // apparent type Workout, actual type Run, notes = ""
         runWorkout.addNotes("test note");
