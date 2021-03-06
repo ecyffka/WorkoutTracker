@@ -13,7 +13,10 @@ public abstract class Workout implements Writable {
     protected String name;                        // name of workout
     protected String date;                        // date workout completed
     protected String notes;                       // notes
+    protected Integer rounds;                     // rounds of circuit
     protected List<Exercise> listOfExercises;     // list of exercises
+    protected Integer distance;                   // distance ran
+    protected String route;                       // running route
 
     // GETTERS
     public String getName() {
@@ -28,8 +31,20 @@ public abstract class Workout implements Writable {
         return this.notes;
     }
 
+    public Integer getRounds() {
+        return this.rounds;
+    }
+
     public List<Exercise> getListOfExercises() {
         return this.listOfExercises;
+    }
+
+    public Integer getDistance() {
+        return this.distance;
+    }
+
+    public String getRoute() {
+        return this.route;
     }
 
     // SETTER

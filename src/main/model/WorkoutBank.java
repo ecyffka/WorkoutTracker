@@ -19,9 +19,13 @@ public class WorkoutBank implements Writable {
         workoutbank = new ArrayList<Workout>();
     }
 
-    // GETTER
+    // GETTERS
     public String getName() {
         return this.name;
+    }
+
+    public List<Workout> getWorkoutBank() {
+        return this.workoutbank;
     }
 
     // MODIFIES: this
@@ -62,5 +66,10 @@ public class WorkoutBank implements Writable {
             jsonArray.put(w.toJson());
         }
         return jsonArray;
+    }
+
+    // EFFECTS: counts number of workouts in the log
+    public Integer numWorkouts() {
+        return workoutbank.size();
     }
 }
