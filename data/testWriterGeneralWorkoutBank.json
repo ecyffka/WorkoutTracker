@@ -1,0 +1,22 @@
+{
+    "workoutbank": [
+        {
+            "date": "03/03/21",
+            "route": "seawall",
+            "notes": "",
+            "distance": 5,
+            "name": ""
+        },
+        {
+            "date": "03/04/21",
+            "notes": "",
+            "name": "testcircuit",
+            "listOfExercises": [{
+                "name": "ex1",
+                "equipment": "eq1"
+            }],
+            "rounds": 3
+        }
+    ],
+    "name": "Test WorkoutBank"
+}
