@@ -53,8 +53,8 @@ public class WorkoutBank implements Writable {
     // EFFECTS: converts workout bank to json object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
-        json.put("name", name); //?
-        json.put("workoutbank", workoutsToJson()); //?
+        json.put("name", name);
+        json.put("workoutbank", workoutsToJson());
         return json;
     }
 
