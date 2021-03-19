@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// Represents the GUI page for logging a circuit workout
 public class CircuitPanel extends JPanel {
     private JPanel panel;
     private GroupLayout layout;
@@ -34,6 +35,7 @@ public class CircuitPanel extends JPanel {
     private WorkoutBank log;
     private Integer exerciseCount;
 
+    // EFFECTS: sets up circuit entry form
     public CircuitPanel(WorkoutBank log) {
         this.log = log;
         panel = new JPanel();
@@ -49,9 +51,11 @@ public class CircuitPanel extends JPanel {
         validate();
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets up fields for circuit log form
     public void setFields() {
         name = new JLabel("Name");
-        uname = new JTextField(20);
+        uname = new JTextField(25);
         date = new JLabel("Date");
         udate = new JTextField();
         rounds = new JLabel("Rounds");
@@ -64,6 +68,8 @@ public class CircuitPanel extends JPanel {
         addExercises.addActionListener(new ClickHandler());
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets up fields for exercise log form
     public void setExerciseFields() {
         exercise = new JLabel("Exercise");
         exercise.setVisible(false);
@@ -81,6 +87,8 @@ public class CircuitPanel extends JPanel {
         done.addActionListener(new ClickHandler());
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets horizontal groupings for page components
     public void setHorizontal() {
         layout.setHorizontalGroup(
                 layout.createSequentialGroup()
@@ -96,6 +104,8 @@ public class CircuitPanel extends JPanel {
                                 .addComponent(done).addComponent(summary)));
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets vertical groups for page components
     public void setVertical() {
         layout.setVerticalGroup(
                 layout.createSequentialGroup()
@@ -119,9 +129,13 @@ public class CircuitPanel extends JPanel {
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(summary)));
     }
 
+    // handles mouse clicks for 'Add Exercises' and 'Submit' buttons'
     private class ClickHandler implements ActionListener {
 
         @Override
+        // MODIFIES: this
+        // EFFECTS: initiates exercise log component when 'Add Exercises' button is clicked, logs circuit
+        //    and prints out a summary when 'Submit' button is clicked.
         public void actionPerformed(ActionEvent e) {
             exerciseCount = Integer.parseInt(unum.getText());
             if (e.getSource() == addExercises) {
@@ -147,11 +161,13 @@ public class CircuitPanel extends JPanel {
         }
     }
 
+    // handles mouse clicks for 'Next Exercise' button
     private class NextHandler implements ActionListener {
 
         @Override
+        // MODIFIES: this
+        // EFFECTS: adds exercise to list when 'next' button is clicked
         public void actionPerformed(ActionEvent e) {
-            System.out.println(exerciseCount);
             circuit.addExercise(uexercise.getText(), uequipment.getText());
             uexercise.setText("");
             uequipment.setText("");

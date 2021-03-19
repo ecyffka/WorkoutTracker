@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// Represents the GUI page for logging a run
 public class RunPanel extends JPanel {
     private JPanel panel;
     private GroupLayout layout;
@@ -25,13 +26,14 @@ public class RunPanel extends JPanel {
     private Workout run;
     private WorkoutBank log;
 
+    // EFFECTS: sets up run entry form
     public RunPanel(WorkoutBank log) {
         this.log = log;
         panel = new JPanel();
         layout = new GroupLayout(panel);
         panel.setLayout(layout);
         date = new JLabel("Date");
-        udate = new JTextField(20);
+        udate = new JTextField(24);
         distance = new JLabel("Distance (km)");
         udistance = new JTextField();
         route = new JLabel("Route");
@@ -48,6 +50,8 @@ public class RunPanel extends JPanel {
         validate();
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets horizontal groups for page components
     public void setHorizontal() {
         layout.setHorizontalGroup(
                 layout.createSequentialGroup()
@@ -59,6 +63,8 @@ public class RunPanel extends JPanel {
                                 .addComponent(unotes).addComponent(submit).addComponent(summary)));
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets vertical groups for page components
     public void setVertical() {
         layout.setVerticalGroup(
                 layout.createSequentialGroup()
@@ -76,8 +82,11 @@ public class RunPanel extends JPanel {
                                 .addComponent(summary)));
     }
 
+    // handles mouse clicks for 'Submit' button
     private class ClickHandler implements ActionListener {
         @Override
+        // MODIFIES: this
+        // EFFECTS: logs run when 'Submit' button is clicked and prints out a summary
         public void actionPerformed(ActionEvent e) {
             run = new Run(udate.getText(), Integer.parseInt(udistance.getText()), uroute.getText());
             run.addNotes(unotes.getText());

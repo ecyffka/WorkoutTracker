@@ -4,13 +4,20 @@ import model.WorkoutBank;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+// Workout Tracker GUI
+// Citation: used Simple Drawing Player as a rough starting point
+//    (source: https://github.students.cs.ubc.ca/CPSC210/SimpleDrawingPlayer-Starter)
 public class GUI extends JFrame {
     public static final int WIDTH = 550;
     public static final int HEIGHT = 350;
@@ -26,10 +33,11 @@ public class GUI extends JFrame {
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
+    // EFFECTS: sets up workout tracker interface
     public GUI() {
         super("Workout Tracker");
         log = new WorkoutBank("Test WorkoutBank");
-      //  self = this;
+        //  self = this;
         current = new JPanel();
         setLayout(new BorderLayout());
         setMinimumSize(new Dimension(WIDTH, HEIGHT));
@@ -42,7 +50,7 @@ public class GUI extends JFrame {
     }
 
     // MODIFIES: this
-    // EFFECTS:  a helper method which declares and instantiates all tools
+    // EFFECTS: sets up main menu page
     private void createMenu() {
         JPanel menuArea = new JPanel();
         menuArea.setLayout(new GridLayout(0, 1));
@@ -66,10 +74,11 @@ public class GUI extends JFrame {
         exit.addActionListener(new ClickHandler());
     }
 
+    // handles all mouse clicks on the main menu page
     private class ClickHandler implements ActionListener {
 
-        // EFFECTS: sets active tool to the resize tool
-        //          called by the framework when the tool is clicked
+        // MODIFIES: this
+        // EFFECTS: directs user to their selected page based on button click
         @Override
         public void actionPerformed(ActionEvent e) {
             JPanel panel = new JPanel();
@@ -95,6 +104,8 @@ public class GUI extends JFrame {
             validate();
         }
 
+        // MODIFIES: this
+        // EFFECTS: loads saved workout log and displays confirmation image
         public JPanel loadPanel() {
             try {
                 log = jsonReader.read();
@@ -102,6 +113,7 @@ public class GUI extends JFrame {
             } catch (IOException n) {
                 System.out.println("Unable to read from file: " + JSON_STORE);
             }
+            playSound();
             JPanel panel = new JPanel();
             ImageIcon icon = new ImageIcon("./data/corgi.jpg");
             JLabel image = new JLabel();
@@ -110,6 +122,26 @@ public class GUI extends JFrame {
             return panel;
         }
 
+        // CITATION: playSound method adapted from:
+        //    http://suavesnippets.blogspot.com/2011/06/add-sound-on-jbutton-click-in-java.html,
+        //   'dog.wav' from: https://www.freesoundeffects.com/
+
+        // EFFECTS: plays dog bark sound to confirm loading of saved workout log
+        public void playSound() {
+            try {
+                AudioInputStream audioInputStream = AudioSystem
+                        .getAudioInputStream(new File("./data/dog.wav").getAbsoluteFile());
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+            } catch (Exception ex) {
+                System.out.println("Error with playing sound.");
+                ex.printStackTrace();
+            }
+        }
+
+        // MODIFIES: this (log)
+        // EFFECTS: saves workout log and exits application
         public void exitPanel() {
             try {
                 jsonWriter.open();
@@ -123,6 +155,7 @@ public class GUI extends JFrame {
         }
     }
 
+    // EFFECTS: runs workout tracker interface
     public static void main(String[] args) {
         new GUI();
     }

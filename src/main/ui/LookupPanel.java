@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// Represents the GUI page for looking up saved workouts by name or date
 public class LookupPanel extends JPanel {
     private JPanel panel;
     private GroupLayout layout;
@@ -16,6 +17,7 @@ public class LookupPanel extends JPanel {
     private JTextArea results;
     private WorkoutBank log;
 
+    // EFFECTS: sets up page for lookup feature
     public LookupPanel(WorkoutBank log) {
         this.log = log;
         panel = new JPanel();
@@ -33,6 +35,8 @@ public class LookupPanel extends JPanel {
         validate();
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets horizontal groups for page components
     public void setHorizontal() {
         layout.setHorizontalGroup(
                 layout.createSequentialGroup()
@@ -41,6 +45,8 @@ public class LookupPanel extends JPanel {
                                 .addComponent(uterm).addComponent(submit).addComponent(results)));
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets vertical groups for page components
     public void setVertical() {
         layout.setVerticalGroup(
                 layout.createSequentialGroup()
@@ -52,8 +58,11 @@ public class LookupPanel extends JPanel {
                                 .addComponent(results)));
     }
 
+    // handles mouse clicks for 'Submit' button
     private class ClickHandler implements ActionListener {
         @Override
+        // MODIFIES: this
+        // EFFECTS: searches log for specified term and returns results when 'Submit' button is clicked
         public void actionPerformed(ActionEvent e) {
             results.setText(log.lookup(uterm.getText()));
             results.setVisible(true);
