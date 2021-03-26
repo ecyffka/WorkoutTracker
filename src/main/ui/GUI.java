@@ -19,7 +19,7 @@ import java.io.IOException;
 // Citation: used Simple Drawing Player as a rough starting point
 //    (source: https://github.students.cs.ubc.ca/CPSC210/SimpleDrawingPlayer-Starter)
 public class GUI extends JFrame {
-    public static final int WIDTH = 550;
+    public static final int WIDTH = 600;
     public static final int HEIGHT = 350;
 
     private JButton load;
@@ -37,7 +37,6 @@ public class GUI extends JFrame {
     public GUI() {
         super("Workout Tracker");
         log = new WorkoutBank("Test WorkoutBank");
-        //  self = this;
         current = new JPanel();
         setLayout(new BorderLayout());
         setMinimumSize(new Dimension(WIDTH, HEIGHT));
@@ -54,7 +53,6 @@ public class GUI extends JFrame {
     private void createMenu() {
         JPanel menuArea = new JPanel();
         menuArea.setLayout(new GridLayout(0, 1));
-        menuArea.setSize(new Dimension(0, 0));
         add(menuArea, BorderLayout.WEST);
 
         load = new JButton("Load Saved Workout Log");
@@ -104,6 +102,8 @@ public class GUI extends JFrame {
             validate();
         }
 
+        // CITATION: image source: https://mymodernmet.com/corgi-facts/
+        
         // MODIFIES: this
         // EFFECTS: loads saved workout log and displays confirmation image
         public JPanel loadPanel() {
@@ -115,6 +115,8 @@ public class GUI extends JFrame {
             }
             playSound();
             JPanel panel = new JPanel();
+            panel.setBackground(Color.white);
+            panel.setSize(400,350);
             ImageIcon icon = new ImageIcon("./data/corgi.jpg");
             JLabel image = new JLabel();
             image.setIcon(icon);

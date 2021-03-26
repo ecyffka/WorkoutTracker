@@ -55,7 +55,7 @@ public class CircuitPanel extends JPanel {
     // EFFECTS: sets up fields for circuit log form
     public void setFields() {
         name = new JLabel("Name");
-        uname = new JTextField(25);
+        uname = new JTextField(29);
         date = new JLabel("Date");
         udate = new JTextField();
         rounds = new JLabel("Rounds");

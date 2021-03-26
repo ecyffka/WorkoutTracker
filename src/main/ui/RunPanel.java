@@ -33,7 +33,7 @@ public class RunPanel extends JPanel {
         layout = new GroupLayout(panel);
         panel.setLayout(layout);
         date = new JLabel("Date");
-        udate = new JTextField(24);
+        udate = new JTextField(28);
         distance = new JLabel("Distance (km)");
         udistance = new JTextField();
         route = new JLabel("Route");

@@ -24,7 +24,7 @@ public class LookupPanel extends JPanel {
         layout = new GroupLayout(panel);
         panel.setLayout(layout);
         term = new JLabel("Name or Date (mm/dd/yy)  ");
-        uterm = new JTextField(18);
+        uterm = new JTextField(22);
         results = new JTextArea();
         results.setVisible(false);
         submit = new JButton("Submit");
