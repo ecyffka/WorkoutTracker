@@ -29,3 +29,16 @@ time, pace, splits, etc.), but tracking things gives me a little dopamine kick, 
 Chosen task: Include a type hierarchy in your code.
 - Classes Circuit and Run extend abstract class Workout. Both override abstract methods printWorkout()
 and toJson() in unique ways, appropriate to their functionality.
+
+## Phase 4: Task 3
+Proposed design changes:
+- Have the GUI-related Panel classes (CircuitPanel, LookupPanel, RunPanel) implement a Panel interface with
+ methods setVertical(), setHorizontal(), and setFields(). \
+ ** LookupPanel and RunPanel both initialize all their fields within the constructor because they're less 
+ complicated than CircuitPanel, and they fit within the 25 line limit. For clarity and consistency between 
+ Panel classes, I'd like to break those steps out into setFields() methods.
+- Split SavePanel and LoadPanel out into their own classes. Again, because they were fairly simple and fit
+within line limits, I left them in the GUI class, but as they have their own functions distinct from the GUI 
+as a whole, they should have their own classes. (Because they're simple classes and don't require group 
+formatting or a lot of field set up, however, they would not implement the Panel interface.)
+- Exception handling for all inputs to make sure date types and formatting of input is correct.
