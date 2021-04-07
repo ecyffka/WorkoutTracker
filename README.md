@@ -24,3 +24,8 @@ time, pace, splits, etc.), but tracking things gives me a little dopamine kick, 
 - As a user, I would like to be able to search for workouts by name or date.
 - As a user, I would like to be able to save my workout log to file.
 - As a user, I would like to be able to retrieve my saved workout log.
+
+## Phase 4: Task 2
+Chosen task: Include a type hierarchy in your code.
+- Classes Circuit and Run extend abstract class Workout. Both override abstract methods printWorkout()
+and toJson() in unique ways, appropriate to their functionality.

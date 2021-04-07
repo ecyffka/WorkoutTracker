@@ -84,7 +84,7 @@ public class CircuitPanel extends JPanel {
         next.addActionListener(new NextHandler());
         done = new JButton("Submit");
         done.setVisible(false);
-        done.addActionListener(new ClickHandler());
+        done.addActionListener(new DoneHandler());
     }
 
     // MODIFIES: this
@@ -129,13 +129,12 @@ public class CircuitPanel extends JPanel {
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(summary)));
     }
 
-    // handles mouse clicks for 'Add Exercises' and 'Submit' buttons'
+    // handles mouse clicks for 'Add Exercises' button
     private class ClickHandler implements ActionListener {
 
         @Override
         // MODIFIES: this
-        // EFFECTS: initiates exercise log component when 'Add Exercises' button is clicked, logs circuit
-        //    and prints out a summary when 'Submit' button is clicked.
+        // EFFECTS: initiates exercise log component when 'Add Exercises' button is clicked
         public void actionPerformed(ActionEvent e) {
             exerciseCount = Integer.parseInt(unum.getText());
             if (e.getSource() == addExercises) {
@@ -151,6 +150,16 @@ public class CircuitPanel extends JPanel {
                     done.setVisible(true);
                 }
             }
+        }
+    }
+
+    // handles mouse clicks for 'Submit' button
+    private class DoneHandler implements ActionListener {
+
+        @Override
+        // MODIFIES: this
+        // EFFECTS: logs circuit and prints out a summary when 'Submit' button is clicked.
+        public void actionPerformed(ActionEvent e) {
             if (e.getSource() == done) {
                 circuit.addExercise(uexercise.getText(), uequipment.getText());
                 log.addWorkout(circuit);

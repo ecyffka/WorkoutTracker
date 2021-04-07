@@ -3,13 +3,13 @@
         {
             "date": "03/03/21",
             "route": "seawall",
-            "notes": "\r\n\r\n",
+            "notes": "\r\n\r\n\r\n",
             "distance": 2,
             "name": ""
         },
         {
             "date": "03/04/21",
-            "notes": "\r\n\r\n",
+            "notes": "\r\n\r\n\r\n",
             "name": "03/04/21",
             "listOfExercises": [
                 {
@@ -26,13 +26,13 @@
         {
             "date": "03/05/21",
             "route": "seawall",
-            "notes": "\r\n\r\n",
+            "notes": "\r\n\r\n\r\n",
             "distance": 2,
             "name": ""
         },
         {
             "date": "03/04/21",
-            "notes": "notesss2\r\n\r\n",
+            "notes": "notesss2\r\n\r\n\r\n",
             "name": "testcircuit2",
             "listOfExercises": [{
                 "name": "ex1",
@@ -43,13 +43,13 @@
         {
             "date": "03/05/21",
             "route": "seawall",
-            "notes": "newnotessss\r\n\r\n",
+            "notes": "newnotessss\r\n\r\n\r\n",
             "distance": 3,
             "name": ""
         },
         {
             "date": "03/04/21",
-            "notes": "\r\n\r\n",
+            "notes": "\r\n\r\n\r\n",
             "name": "testcircuit3",
             "listOfExercises": [
                 {
@@ -70,20 +70,20 @@
         {
             "date": "03/04/21",
             "route": "stanley park",
-            "notes": "notesssss\r\n\r\n",
+            "notes": "notesssss\r\n\r\n\r\n",
             "distance": 2,
             "name": ""
         },
         {
             "date": "03/13/21",
             "route": "x",
-            "notes": "\r\n\r\n",
+            "notes": "\r\n\r\n\r\n",
             "distance": 3,
             "name": ""
         },
         {
             "date": "3/14/21",
-            "notes": "\r\n\r\n",
+            "notes": "\r\n\r\n\r\n",
             "name": "name",
             "listOfExercises": [
                 {
@@ -108,7 +108,14 @@
         {
             "date": "3/14/21",
             "route": "route",
-            "notes": "notes\r\n\r\n",
+            "notes": "notes\r\n\r\n\r\n",
+            "distance": 2,
+            "name": ""
+        },
+        {
+            "date": "03/29/21",
+            "route": "seawall",
+            "notes": "none\r\n",
             "distance": 2,
             "name": ""
         }
